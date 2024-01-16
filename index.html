@@ -8,18 +8,88 @@
 </head>
 <style>
 
+    body{
+        background-color: honeydew;
+    }
+
+    .game{
+        width: 742px;
+        margin: auto;
+        background-color: lightgray;
+        padding: 10px;
+        border: 1px solid black;
+    }
+
+    #pane{
+        width: 720px;
+        background-color: white;
+        border: 1px solid gray;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    #pane img{
+        padding: 2px;
+        margin: 1px;
+        border: 1px solid white;
+    }
+
+    #pane img:hover{
+        border: 1px solid red;
+    }
+    
+
+
 </style>
 <script>
 
+    const items = []
+    let lakatcount = 0
+    let papircount = 0
+    let pendrivecount = 0
+    let tollcount = 0
+
     function start() {
+       reset() 
+    }
+
+    function reset() {
+        let html = ""
+        for(let i = 0; i < 70; i++){
+            items[i] = 0
+            html += "<img id='"+i+"' onclick='katt("+i+")' src='icons/semmi.png'>"
+        }
+        lakatcount = 0
+        papircount = 0
+        pendrivecount = 0
+        tollcount = 0
+        document.getElementById("pane").innerHTML=html
+    }
+
+    function katt(index) {
         
     }
 
 </script>
 <body onload="start()">
     
-    <div class="game">
 
+
+    <div class="game">
+        <div id="pane">
+
+        </div>
+        <div id="counters">
+            <img src="icons/lakat.png">
+            <span id="lakat_counter" >00 db</span>
+            <img src="icons/papir.png">
+            <span id="papir_counter" >00 db</span>
+            <img src="icons/pendrive.png">
+            <span id="pendrive_counter" >00 db</span>
+            <img src="icons/toll.png">
+            <span id="toll_counter" >00 db</span>
+            <img id="next_kep" src="icons/semmi.png">
+        </div>
     </div>
 
 </body>
