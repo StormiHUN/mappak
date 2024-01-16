@@ -81,6 +81,14 @@
         document.getElementById("pane").innerHTML=html
         next = rand()
         document.getElementById("next_kep").src = "icons/"+selection[next]+".png"
+        document.getElementById("lakat_counter").innerHTML = lakatcount+" db"
+        document.getElementById("papir_counter").innerHTML = papircount+" db"
+        document.getElementById("pendrive_counter").innerHTML = pendrivecount+" db"
+        document.getElementById("toll_counter").innerHTML = tollcount+" db"
+        if(lakatcount < 10) document.getElementById("lakat_counter").innerHTML = "0" + lakatcount+" db"
+        if(papircount < 10) document.getElementById("papir_counter").innerHTML = "0" + papircount+" db"
+        if(pendrivecount < 10) document.getElementById("pendrive_counter").innerHTML = "0" + pendrivecount+" db"
+        if(tollcount < 10) document.getElementById("toll_counter").innerHTML = "0" + tollcount+" db"
     }
 
     function katt(index) {
@@ -141,7 +149,7 @@
             <span id="pendrive_counter" >00 db</span>
             <img src="icons/toll.png">
             <span id="toll_counter" >00 db</span>
-            <img id="next_kep" src="icons/semmi.png">
+            <img id="next_kep" onmouseover="this.src='icons/semmi.png'" onmouseleave="this.src='icons/'+selection[next]+'.png'" onclick="reset()" src="icons/semmi.png">
         </div>
     </div>
 
